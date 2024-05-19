@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul.menu {
+  list-style-type: none;
+}
+
+.btn {
+  background-color: chartreuse;
+  border: none;
+  padding: 1em;
+  margin-top: 1em;
+  font-size: 1em;
+}
+
+.card, .widget {
+  border: 1px solid #000;
+  padding: 1.5em 0.5em;
+  margin: 0.5em;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widget {
+  border: none;
+}
+.widget__title {
+  margin-bottom: 1em;
+}
+
+body {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
+}
+body header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+body header #main-menu {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  background-color: aquamarine;
+  width: 70vw;
+  padding: 2em;
+  left: 0;
+  top: 0;
+}
+body header #main-menu .menu-item {
+  padding: 0.5em;
+}
+body main {
+  grid-area: main;
+}
+body main .hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .hero__content {
+  margin: 0 auto;
+  padding: 3em 1em;
+  background-color: #fff;
+  z-index: 10;
+  opacity: 0.8;
+}
+body main .hero__content h1 {
+  font-size: 3em;
+}
+body main .hero__content p {
+  font-size: 1.25em;
+}
+body main .hero::before {
+  content: "";
+  background-image: url("../img/bg1.jpg");
+  background-position: center;
+  background-origin: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+body main .teaser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2em;
+}
+body main .teaser h2 {
+  order: 0;
+  flex-basis: 100%;
+  text-align: center;
+  margin: 1em 0;
+  font-size: 2em;
+}
+body main .teaser img {
+  order: 2;
+}
+body main .teaser p {
+  order: 1;
+  padding: 1em;
+}
+body main .testimonials {
+  margin-top: 2em;
+}
+body main .testimonials h2 {
+  margin: 1em 0;
+  text-align: center;
+}
+body footer {
+  grid-area: footer;
+  background-color: bisque;
+  margin-top: 1.5em;
+}
+body footer .credits {
+  background-color: #000;
+  color: #fff;
+  padding: 1em 0.5em;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/*# sourceMappingURL=style.css.map */
