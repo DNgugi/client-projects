@@ -22,12 +22,12 @@ ul.menu {
 
 .card,
 .widget {
-  border: 2px dotted #000;
   padding: 2em;
   margin: 2em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 48px #b3b3b3;
 }
 .card h3,
 .widget h3 {
@@ -53,8 +53,7 @@ form {
   display: flex;
   flex-direction: column;
   padding: 1.5em;
-  border: 1px solid #000;
-  width: 80%;
+  width: 100%;
   margin: 2em auto;
 }
 form input {
@@ -62,6 +61,94 @@ form input {
   height: 48px;
 }
 
+.hithere {
+  animation: hithere 1s ease 1;
+  animation-delay: 2s;
+}
+
+@keyframes hithere {
+  30% {
+    transform: scale(1.2);
+  }
+  40%, 60% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.slideleft {
+  animation: slideleft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideleft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.slideright {
+  animation: slideright;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideright {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.bounce {
+  animation: bounce 2s ease 1;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.bounce-in {
+  animation: bounce-in 2s ease 1;
+  animation-delay: 2s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 body {
   height: 100vh;
   width: 100vw;
@@ -92,7 +179,7 @@ body header .navigation {
 body main {
   margin-top: 150px;
   min-height: 100vh;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 body main .hero {
   height: 100vh;
@@ -103,12 +190,13 @@ body main .hero {
 body main .hero__content {
   margin: 0 auto;
   padding: 3em 1em;
-  background-color: #fff;
+  background-color: antiquewhite;
+  opacity: 0.9;
   z-index: 10;
-  opacity: 0.8;
+  position: relative;
 }
 body main .hero__content h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 body main .hero__content p {
   font-size: 1.25em;
@@ -120,6 +208,7 @@ body main .hero::before {
   background-origin: top;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -127,28 +216,53 @@ body main .hero::before {
 body main .about {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #000;
+  background-color: lightgray;
 }
 body main .about h2 {
   order: 0;
-  flex-basis: 100%;
+  width: 100%;
   text-align: center;
-  margin: 1em 0;
+  position: relative;
+  margin: 0.5em 0;
   font-size: 2em;
-}
-body main .about img {
-  order: 2;
 }
 body main .about p {
   order: 1;
-  padding: 1em;
+  padding: 1em 2em;
+  position: relative;
+}
+body main .about button {
+  position: relative;
+  order: 3;
 }
 body main .programs {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  position: relative;
+}
+body main .programs::before {
+  content: "";
+  background-image: url("../img/img1.jpg");
+  background-position: center;
+  background-origin: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.4;
 }
 body main .programs h2 {
   order: 0;
@@ -156,40 +270,65 @@ body main .programs h2 {
   text-align: center;
   margin: 1em 0;
   font-size: 2em;
-}
-body main .programs img {
-  order: 2;
+  position: relative;
 }
 body main .programs p {
   order: 1;
-  padding: 1em;
+  padding: 1em 2em;
+  position: relative;
+}
+body main .programs button {
+  position: relative;
+  order: 3;
 }
 body main .testimonials {
-  min-height: 100vh;
+  height: 100vh;
   padding-top: 2.5em;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .testimonials__slider {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+  position: relative;
+}
+body main .testimonials__slider .card {
+  min-width: 80%;
 }
 body main .testimonials h2 {
-  margin: 1em 0;
   text-align: center;
+  width: 100%;
+  margin-bottom: 1em;
 }
 body main .contact {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background-color: aquamarine;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding: 2em;
+  background-color: lightgray;
+}
+body main .contact .card {
+  background-color: #fff;
 }
 body main .contact h2 {
   order: 0;
   flex-basis: 100%;
   text-align: center;
-  margin: 1em 0;
   font-size: 2em;
 }
 body main .contact__info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
+  position: relative;
   width: 100%;
   padding: 2em;
 }
@@ -200,6 +339,7 @@ body main .contact__form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   width: 100%;
 }
 body footer {
