@@ -213,7 +213,7 @@ body main .hero::before {
   height: 100%;
   width: 100%;
 }
-body main .about {
+body main .about, body main .company {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -224,7 +224,7 @@ body main .about {
   color: #000;
   background-color: lightgray;
 }
-body main .about h2 {
+body main .about h2, body main .company h2 {
   order: 0;
   width: 100%;
   text-align: center;
@@ -232,16 +232,16 @@ body main .about h2 {
   margin: 0.5em 0;
   font-size: 2em;
 }
-body main .about p {
+body main .about p, body main .company p {
   order: 1;
   padding: 1em 2em;
   position: relative;
 }
-body main .about button {
+body main .about button, body main .company button {
   position: relative;
   order: 3;
 }
-body main .programs {
+body main .programs, body main .team {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -250,7 +250,7 @@ body main .programs {
   justify-content: center;
   position: relative;
 }
-body main .programs::before {
+body main .programs::before, body main .team::before {
   content: "";
   background-image: url("../img/img1.jpg");
   background-position: center;
@@ -264,7 +264,7 @@ body main .programs::before {
   z-index: -1;
   opacity: 0.4;
 }
-body main .programs h2 {
+body main .programs h2, body main .team h2 {
   order: 0;
   flex-basis: 100%;
   text-align: center;
@@ -272,12 +272,12 @@ body main .programs h2 {
   font-size: 2em;
   position: relative;
 }
-body main .programs p {
+body main .programs p, body main .team p {
   order: 1;
   padding: 1em 2em;
   position: relative;
 }
-body main .programs button {
+body main .programs button, body main .team button {
   position: relative;
   order: 3;
 }
@@ -343,14 +343,48 @@ body main .contact__form {
   width: 100%;
 }
 body footer {
-  background-color: black;
-  color: #fff;
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 50px;
-  font-size: 80%;
+  flex-wrap: wrap;
+  min-height: 50px;
+}
+body footer .footer__widgets {
+  width: 100%;
+}
+body footer .footer__widgets .widgets__title {
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+}
+body footer .footer__credits {
+  text-align: center;
+  width: 100%;
+  padding: 1em;
+  background-color: #000;
+  color: #fff;
+}
+body .main__title {
+  width: 100%;
+  text-align: center;
+  padding: 3em;
+  background-color: lightgray;
+}
+body .company {
+  background-color: #fff !important;
+  padding: 5em 2em;
+}
+body .team__content {
+  position: relative;
+}
+body .team__cards {
+  position: relative;
+}
+body .team__cards .card {
+  background-color: #fff;
+}
+body .team__cards .card img {
+  width: 250px;
+  height: auto;
 }
 
 /*# sourceMappingURL=home.css.map */

@@ -252,7 +252,7 @@ body {
       }
     }
     
-    .about {
+    .about, .company {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -263,21 +263,6 @@ body {
       color: $primary-black;
       background-color: lightgray;
       
-      //    &::before{
-        //          content: "";
-        //     background-image: url("../img/img1.jpg");
-        //     background-position: center;
-        //     background-origin: top;
-        //     background-size: cover;
-        //     background-repeat: no-repeat;
-        //     background-attachment: fixed;
-        //     position: absolute;
-        //     height: 100%;
-        //     width: 100%;
-        //     z-index: -1;
-        //           opacity: .2;
-        
-        // }
         h2 {
           order: 0;
           width: 100%;
@@ -299,7 +284,7 @@ body {
         }
       }
       
-      .programs {
+      .programs, .team {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -416,13 +401,53 @@ body {
     }
     
     footer {
-      background-color: black;
-      color: #fff;
-      text-align: center;
+      
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 50px;
-      font-size: 80%;
+      flex-wrap: wrap;
+      min-height: 50px;
+     .footer__widgets{
+        width: 100%;
+        .widgets__title{
+          width: 100%;
+          text-align: center;
+          padding: 1em;
+        }
+
+      }
+      .footer__credits{
+        text-align: center;
+        width: 100%;
+        padding: 1em;
+        background-color: #000;
+        color: #fff;
+      }
+    }
+
+    //About page
+    .main__title{
+      width: 100%;
+      text-align: center;
+      padding: 3em;
+      background-color: lightgray;
+    }
+    .company{
+      background-color: #fff !important;
+      padding: 5em 2em;
+    }
+    .team{
+      &__content{
+        position: relative;
+      }
+      &__cards{
+        position: relative;
+        .card{
+          background-color: #fff;
+          img{
+            width: 250px;
+            height: auto;
+          }
+        }
+      }
     }
   }
