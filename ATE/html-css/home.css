@@ -27,6 +27,7 @@ ul.menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   box-shadow: 0 0 48px #b3b3b3;
 }
 .card h3,
@@ -176,18 +177,18 @@ body header .navigation {
   color: white;
   display: none;
 }
-body main {
+body main, body #page {
   margin-top: 150px;
   min-height: 100vh;
   scroll-snap-type: y mandatory;
 }
-body main .hero {
+body main .hero, body #page .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-body main .hero__content {
+body main .hero__content, body #page .hero__content {
   margin: 0 auto;
   padding: 3em 1em;
   background-color: antiquewhite;
@@ -195,13 +196,13 @@ body main .hero__content {
   z-index: 10;
   position: relative;
 }
-body main .hero__content h1 {
+body main .hero__content h1, body #page .hero__content h1 {
   font-size: 2.5em;
 }
-body main .hero__content p {
+body main .hero__content p, body #page .hero__content p {
   font-size: 1.25em;
 }
-body main .hero::before {
+body main .hero::before, body #page .hero::before {
   content: "";
   background-image: url("../img/img2.jpg");
   background-position: center;
@@ -213,7 +214,7 @@ body main .hero::before {
   height: 100%;
   width: 100%;
 }
-body main .about, body main .company {
+body main .about, body main .company, body #page .about, body #page .company {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -224,7 +225,7 @@ body main .about, body main .company {
   color: #000;
   background-color: lightgray;
 }
-body main .about h2, body main .company h2 {
+body main .about h2, body main .company h2, body #page .about h2, body #page .company h2 {
   order: 0;
   width: 100%;
   text-align: center;
@@ -232,16 +233,16 @@ body main .about h2, body main .company h2 {
   margin: 0.5em 0;
   font-size: 2em;
 }
-body main .about p, body main .company p {
+body main .about p, body main .company p, body #page .about p, body #page .company p {
   order: 1;
   padding: 1em 2em;
   position: relative;
 }
-body main .about button, body main .company button {
+body main .about button, body main .company button, body #page .about button, body #page .company button {
   position: relative;
   order: 3;
 }
-body main .programs, body main .team {
+body main .programs, body main .team, body #page .programs, body #page .team {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -250,7 +251,7 @@ body main .programs, body main .team {
   justify-content: center;
   position: relative;
 }
-body main .programs::before, body main .team::before {
+body main .programs::before, body main .team::before, body #page .programs::before, body #page .team::before {
   content: "";
   background-image: url("../img/img1.jpg");
   background-position: center;
@@ -264,7 +265,7 @@ body main .programs::before, body main .team::before {
   z-index: -1;
   opacity: 0.4;
 }
-body main .programs h2, body main .team h2 {
+body main .programs h2, body main .team h2, body #page .programs h2, body #page .team h2 {
   order: 0;
   flex-basis: 100%;
   text-align: center;
@@ -272,16 +273,16 @@ body main .programs h2, body main .team h2 {
   font-size: 2em;
   position: relative;
 }
-body main .programs p, body main .team p {
+body main .programs p, body main .team p, body #page .programs p, body #page .team p {
   order: 1;
   padding: 1em 2em;
   position: relative;
 }
-body main .programs button, body main .team button {
+body main .programs button, body main .team button, body #page .programs button, body #page .team button {
   position: relative;
   order: 3;
 }
-body main .testimonials {
+body main .testimonials, body #page .testimonials {
   height: 100vh;
   padding-top: 2.5em;
   width: 100vw;
@@ -289,22 +290,22 @@ body main .testimonials {
   flex-direction: column;
   justify-content: center;
 }
-body main .testimonials__slider {
+body main .testimonials__slider, body #page .testimonials__slider {
   width: 100%;
   display: flex;
   overflow-x: scroll;
   align-items: center;
   position: relative;
 }
-body main .testimonials__slider .card {
+body main .testimonials__slider .card, body #page .testimonials__slider .card {
   min-width: 80%;
 }
-body main .testimonials h2 {
+body main .testimonials h2, body #page .testimonials h2 {
   text-align: center;
   width: 100%;
   margin-bottom: 1em;
 }
-body main .contact {
+body main .contact, body #page .contact {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -314,16 +315,16 @@ body main .contact {
   padding: 2em;
   background-color: lightgray;
 }
-body main .contact .card {
+body main .contact .card, body #page .contact .card {
   background-color: #fff;
 }
-body main .contact h2 {
+body main .contact h2, body #page .contact h2 {
   order: 0;
   flex-basis: 100%;
   text-align: center;
   font-size: 2em;
 }
-body main .contact__info {
+body main .contact__info, body #page .contact__info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -332,10 +333,10 @@ body main .contact__info {
   width: 100%;
   padding: 2em;
 }
-body main .contact__info p {
+body main .contact__info p, body #page .contact__info p {
   margin: 0.75em;
 }
-body main .contact__form {
+body main .contact__form, body #page .contact__form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -385,6 +386,14 @@ body .team__cards .card {
 body .team__cards .card img {
   width: 250px;
   height: auto;
+}
+body .gallery {
+  width: 80%;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+  grid-auto-flow: dense;
 }
 
 /*# sourceMappingURL=home.css.map */

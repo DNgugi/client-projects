@@ -33,6 +33,7 @@ ul.menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   box-shadow: 0 0 48px lighten(#000, 70%);
   
   h3 {
@@ -207,8 +208,8 @@ body {
       display: none;
     }
   }
-  
-  main {
+
+  main, #page {
     margin-top: 150px;
     min-height: 100vh;
     scroll-snap-type: y mandatory;
@@ -449,5 +450,20 @@ body {
           }
         }
       }
+    }
+
+    //programs page
+    .gallery{
+      width: 80%;
+      margin: 1em auto;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1em;
+      grid-auto-flow: dense;
+      // img {
+      //     max-width: 400px;
+      //     height: auto;
+      //   }
+      
     }
   }
