@@ -27,7 +27,7 @@ ul.menu {
 .card, .widget{
     border: 1px solid $primary-black;
     padding: 1.5em 0.5em;
-    margin: 0.5em;
+    margin: 1em 0.5em;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ body {
         }
       &::before{
         content: "";
-        background-image: url('../img/bg1.jpg');
+        background-image: url('../img/img2.jpg');
         background-position: center;
         background-origin: top;
         background-size: cover;
