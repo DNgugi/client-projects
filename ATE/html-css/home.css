@@ -34,10 +34,6 @@ ul.menu {
 .widget h3 {
   font-size: 1.5em;
 }
-.card img,
-.widget img {
-  margin: 2em;
-}
 .card p,
 .widget p {
   text-align: center;
@@ -403,6 +399,12 @@ body .footer {
 body .footer__widgets {
   width: 100%;
 }
+body .footer__widgets .contact__form {
+  position: relative;
+}
+body .footer__widgets .contact {
+  position: relative;
+}
 body .footer__widgets .widgets__title,
 body .footer__widgets .widget__title {
   width: 100%;
@@ -439,9 +441,16 @@ body .team__cards .card img {
   width: 250px;
   height: auto;
 }
-body .gallery {
-  width: 80%;
-  margin: 1em auto;
+body .masonry {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  padding: 0.5em;
+  gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: next;
+  grid-template-rows: masonry;
 }
 
 /*# sourceMappingURL=home.css.map */

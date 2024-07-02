@@ -40,9 +40,6 @@ ul.menu {
     font-size: 1.5em;
   }
 
-  img {
-    margin: 2em;
-  }
 
   p {
     text-align: center;
@@ -415,6 +412,15 @@ body {
 
     &__widgets {
       width: 100%;
+
+      .contact__form {
+        position: relative;
+      }
+
+      .contact {
+        position: relative;
+      }
+
       .widgets__title,
       .widget__title {
         width: 100%;
@@ -465,18 +471,17 @@ body {
     }
   }
 
-  //programs page
-  .gallery {
-    width: 80%;
-    margin: 1em auto;
-    // display: grid;
-    // grid-template-columns: repeat(1, 1fr);
-    // gap: 1em;
-    // grid-auto-flow: dense;
-    // img {
-    //     max-width: 400px;
-    //     height: auto;
-    //   }
 
+  //programs page
+  .masonry {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    padding: .5em;
+    gap: .5em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: next;
+    grid-template-rows: masonry;
   }
 }
