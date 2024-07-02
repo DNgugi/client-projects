@@ -35,15 +35,15 @@ ul.menu {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 48px lighten(#000, 70%);
-  
+
   h3 {
     font-size: 1.5em;
   }
-  
+
   img {
     margin: 2em;
   }
-  
+
   p {
     text-align: center;
   }
@@ -51,7 +51,7 @@ ul.menu {
 
 .widget {
   border: none;
-  
+
   &__title {
     margin-bottom: 1em;
   }
@@ -63,7 +63,7 @@ form {
   padding: 1.5em;
   width: 100%;
   margin: 2em auto;
-  
+
   input {
     margin: 0.5em;
     height: 48px;
@@ -79,20 +79,20 @@ form {
   30% {
     transform: scale(1.2);
   }
-  
+
   40%,
   60% {
     transform: rotate(-20deg) scale(1.2);
   }
-  
+
   50% {
     transform: rotate(20deg) scale(1.2);
   }
-  
+
   70% {
     transform: rotate(0deg) scale(1.2);
   }
-  
+
   100% {
     transform: scale(1);
   }
@@ -108,7 +108,7 @@ form {
   0% {
     left: -100%;
   }
-  
+
   100% {
     left: 0%;
   }
@@ -124,7 +124,7 @@ form {
   0% {
     right: -100%;
   }
-  
+
   100% {
     right: 0%;
   }
@@ -135,7 +135,7 @@ form {
 }
 
 @keyframes bounce {
-  
+
   0%,
   20%,
   50%,
@@ -143,11 +143,11 @@ form {
   100% {
     transform: translateY(0);
   }
-  
+
   40% {
     transform: translateY(-30px);
   }
-  
+
   60% {
     transform: translateY(-15px);
   }
@@ -165,16 +165,16 @@ form {
     opacity: 0;
     transform: scale(0.3);
   }
-  
+
   50% {
     opacity: 1;
     transform: scale(1.05);
   }
-  
+
   70% {
     transform: scale(0.9);
   }
-  
+
   100% {
     transform: scale(1);
   }
@@ -184,7 +184,7 @@ body {
   height: 100vh;
   width: 100vw;
   position: relative;
-  
+
   header {
     width: 100%;
     height: 150px;
@@ -192,7 +192,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 99;
-    
+
     .navigation {
       display: flex;
       flex-direction: column;
@@ -209,39 +209,40 @@ body {
     }
   }
 
-  main, #page {
+  main,
+  #page {
     margin-top: 150px;
     min-height: 100vh;
     scroll-snap-type: y mandatory;
-    
+
     .hero {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      
+
       &__content {
         margin: 0 auto;
         padding: calc($mobile-padding + 2em) $mobile-padding;
         background-color: antiquewhite;
-        
+
         opacity: 0.9;
         z-index: 10;
         position: relative;
-        
+
         h1 {
           font-size: 2.5em;
         }
-        
+
         p {
           font-size: 1.25em;
         }
       }
-      
+
       &::before {
         content: "";
         background-image: url("../img/img2.jpg");
-        
+
         background-position: center;
         background-origin: top;
         background-size: cover;
@@ -252,8 +253,10 @@ body {
         width: 100%;
       }
     }
-    
-    .about, .company {
+
+    .teaser,
+    .about,
+    .company {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -263,207 +266,217 @@ body {
       position: relative;
       color: $primary-black;
       background-color: lightgray;
-      
-        h2 {
-          order: 0;
-          width: 100%;
-          text-align: center;
-          position: relative;
-          margin: 0.5em 0;
-          font-size: 2em;
-        }
-        
-        p {
-          order: 1;
-          padding: $mobile-padding 2em;
-          position: relative;
-        }
-        
-        button {
-          position: relative;
-          order: 3;
-        }
-      }
-      
-      .programs, .team {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
+
+      h2 {
+        order: 0;
+        width: 100%;
+        text-align: center;
         position: relative;
-        
-        &::before {
-          content: "";
-          background-image: url("../img/img1.jpg");
-          background-position: center;
-          background-origin: top;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          z-index: -1;
-          opacity: 0.4;
-        }
-        
-        h2 {
-          order: 0;
-          flex-basis: 100%;
-          text-align: center;
-          margin: 1em 0;
-          font-size: 2em;
-          position: relative;
-        }
-        
-        p {
-          order: 1;
-          padding: $mobile-padding 2em;
-          position: relative;
-        }
-        
-        button {
-          position: relative;
-          order: 3;
-        }
+        margin: 0.5em 0;
+        font-size: 2em;
       }
-      
-      .testimonials {
-        height: 100vh;
-        padding-top: 2.5em;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        &__slider {
-          width: 100%;
-          display: flex;
-          overflow-x: scroll;
-          align-items: center;
-          position: relative;
-          .card {
-            min-width: 80%;
-          }
-        }
-        
-        h2 {
-          text-align: center;
-          width: 100%;
-          margin-bottom: 1em;
-        }
+
+      p {
+        order: 1;
+        padding: $mobile-padding 2em;
+        position: relative;
       }
-      
-      .contact {
-        min-height: 100vh;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        flex-direction: column;
-        overflow-x: hidden;
-        padding: 2em;
-        background-color: lightgray;
-        
-        .card {
-          background-color: #fff;
-        }
-        
-        h2 {
-          order: 0;
-          flex-basis: 100%;
-          text-align: center;
-          font-size: 2em;
-        }
-        
-        &__info {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          position: relative;
-          width: 100%;
-          padding: 2em;
-          
-          p {
-            margin: 0.75em;
-          }
-        }
-        
-        &__form {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          width: 100%;
-        }
+
+      button {
+        position: relative;
+        order: 3;
       }
     }
-    
-    footer {
-      
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 50px;
-     .footer__widgets{
-        width: 100%;
-        .widgets__title{
-          width: 100%;
-          text-align: center;
-          padding: 1em;
-        }
 
+    .programs,
+    .team {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      &::before {
+        content: "";
+        background-image: url("../img/img1.jpg");
+        background-position: center;
+        background-origin: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.4;
       }
-      .footer__credits{
+
+      h2 {
+        order: 0;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 1em 0;
+        font-size: 2em;
+        position: relative;
+      }
+
+      p {
+        order: 1;
+        padding: $mobile-padding 2em;
+        position: relative;
+      }
+
+      button {
+        position: relative;
+        order: 3;
+      }
+    }
+
+    .testimonials {
+      min-height: 100vh;
+      padding-top: 2.5em;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__slider {
+        width: 100%;
+        display: flex;
+        overflow-x: scroll;
+        align-items: center;
+        position: relative;
+
+        .card {
+          min-width: 80%;
+        }
+      }
+
+      h2 {
         text-align: center;
         width: 100%;
-        padding: 1em;
-        background-color: #000;
-        color: #fff;
+        margin-bottom: 1em;
       }
     }
 
-    //About page
-    .main__title{
-      width: 100%;
-      text-align: center;
-      padding: 3em;
+    .contact {
+      min-height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      overflow-x: hidden;
+      padding: 2em;
       background-color: lightgray;
-    }
-    .company{
-      background-color: #fff !important;
-      padding: 5em 2em;
-    }
-    .team{
-      &__content{
-        position: relative;
+
+      .card {
+        background-color: #fff;
       }
-      &__cards{
+
+      h2 {
+        order: 0;
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         position: relative;
-        .card{
-          background-color: #fff;
-          img{
-            width: 250px;
-            height: auto;
-          }
+        width: 100%;
+        padding: 2em;
+
+        p {
+          margin: 0.75em;
+        }
+      }
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 50px;
+
+    &__widgets {
+      width: 100%;
+      .widgets__title,
+      .widget__title {
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+      }
+
+    }
+
+    &__credits {
+      text-align: center;
+      width: 100%;
+      padding: 1em;
+      background-color: #000;
+      color: #fff;
+    }
+  }
+
+  //About page
+  .main__title {
+    width: 100%;
+    text-align: center;
+    padding: 3em;
+    background-color: lightgray;
+  }
+
+  .company {
+    background-color: #fff !important;
+    padding: 5em 2em;
+  }
+
+  .team {
+    &__content {
+      position: relative;
+    }
+
+    &__cards {
+      position: relative;
+
+      .card {
+        background-color: #fff;
+
+        img {
+          width: 250px;
+          height: auto;
         }
       }
     }
-
-    //programs page
-    .gallery{
-      width: 80%;
-      margin: 1em auto;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 1em;
-      grid-auto-flow: dense;
-      // img {
-      //     max-width: 400px;
-      //     height: auto;
-      //   }
-      
-    }
   }
+
+  //programs page
+  .gallery {
+    width: 80%;
+    margin: 1em auto;
+    // display: grid;
+    // grid-template-columns: repeat(1, 1fr);
+    // gap: 1em;
+    // grid-auto-flow: dense;
+    // img {
+    //     max-width: 400px;
+    //     height: auto;
+    //   }
+
+  }
+}

@@ -129,3 +129,52 @@ const contactFormObserver = new IntersectionObserver((entries) => {
 });
 
 contactFormObserver.observe(document.querySelector("#contact"));
+
+//aboutpage
+const mainTitleObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const main__title = entry.target.querySelector(".main__title");
+
+    if (entry.isIntersecting) {
+      main__title.classList.add("hithere");
+      return; // if we added the class, exit the function
+    }
+
+    // We're not intersecting, so remove the class!
+    main__title.classList.remove("hithere");
+  });
+});
+
+mainTitleObserver.observe(document.querySelector("#page"));
+
+const teamIntroObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const team__intro = entry.target.querySelector(".team__intro");
+
+    if (entry.isIntersecting) {
+      team__intro.classList.add("slideright");
+      return; // if we added the class, exit the function
+    }
+
+    // We're not intersecting, so remove the class!
+    team__intro.classList.remove("slideright");
+  });
+});
+
+teamIntroObserver.observe(document.querySelector("#team"));
+
+const teamCardsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const team__cards = entry.target.querySelector(".team__cards");
+
+    if (entry.isIntersecting) {
+      team__cards.classList.add("slideleft");
+      return; // if we added the class, exit the function
+    }
+
+    // We're not intersecting, so remove the class!
+    team__cards.classList.remove("slideleft");
+  });
+});
+
+teamCardsObserver.observe(document.querySelector("#team"));
