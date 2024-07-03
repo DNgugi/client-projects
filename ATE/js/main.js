@@ -1,4 +1,3 @@
-import * as Masonry from './masonry.js';
 
 /**
  * HOME PAGE
