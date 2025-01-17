@@ -23,22 +23,22 @@ a {
 
 /* unvisited link */
 a:link {
-  color: red;
+  color: black;
 }
 
-/* mouse over link */
 /* visited link */
 a:visited {
   color: black;
 }
 
+/* mouse over link */
 a:hover {
   color: white;
 }
 
 /* selected link */
 a:active {
-  color: blue;
+  color: black;
 }
 
 .btn {
@@ -220,9 +220,14 @@ body header .navigation {
   background-color: green;
   color: white;
 }
-body header .navigation a {
-  padding: 1em;
+body header .navigation .menu {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body header .navigation .menu li {
+  padding: 0.5em;
 }
 body header .hidden {
   display: none !important;
@@ -398,10 +403,8 @@ body main .contact {
   min-height: 100vh;
   width: 100vw;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
   padding: 2em;
   background-color: lightgray;
 }
@@ -421,7 +424,6 @@ body main .contact__info {
   text-align: center;
   position: relative;
   width: 100%;
-  padding: 2em;
 }
 body main .contact__form {
   display: flex;
