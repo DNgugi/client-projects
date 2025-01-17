@@ -4,24 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>A-Team Edventures | Tagline here</title>
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="branding">
-        <img
+        <a href="home.html"><img
           src="../img/edventures-transparent-logo_01.png"
           alt="A-Team EdVentures logo"
-        />
+        /></a>
       </div>
-      <div class="navigation">
+      <div class="navigation hidden">
         <ul id="main-menu" class="menu">
-          <li class="menu-item">Home</li>
-          <li class="menu-item">About Us</li>
-          <li class="menu-item">Programs</li>
-          <li class="menu-item">Locations</li>
-          <li class="menu-item">Contact Us</li>
+          <li class="menu-item"><a href="home.html">Home</a></li>
+          <li class="menu-item"><a href="about.html">About Us</a></li>
+          <li class="menu-item"><a href="programs.html">Programs</a></li>
+          <li class="menu-item"><a href="contact.html">Contact Us</a></li>
         </ul>
+      </div>
+      <div class="btn-group">
+        <p  class="btn menu-toggle">MENU</p>
+
+        <a href="search.html"><p class="btn search">SEARCH</p></a>
       </div>
     </header>
     <main id="home">
@@ -92,7 +99,7 @@
               alt="client logo"
             />
             <p>
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
               harum quaerat unde maiores illo, animi corrupti, expedita quae
               suscipit accusantium tempora eligendi repellendus sit amet."
             </p>
@@ -125,7 +132,7 @@
       </section>
       <section id="contact" class="contact">
         <h2 class="contact__title">Get In Touch</h2>
-        <div class="card contact__info slideleft">
+        <div class="card contact__info">
           <p>
             Location: Hing Wai Centre, 33/F Suite 3319-3320, 7 Tin Wan Praya
             Road, Aberdeen. Hong Kong
@@ -134,7 +141,7 @@
           <p>E-mail: info@ateamedventures.com</p>
         </div>
 
-        <div class="contact__form card slideright">
+        <div class="contact__form card">
           <form action="#">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />

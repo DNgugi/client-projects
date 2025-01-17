@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: nunito, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Roboto;
 }
 
 img {
@@ -12,12 +17,36 @@ ul.menu {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}
+
 .btn {
   background-color: chartreuse;
   border: none;
   padding: 1em;
-  margin-top: 1em;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .card,
@@ -49,15 +78,28 @@ ul.menu {
 form {
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
   width: 100%;
-  margin: 2em auto;
 }
 form input {
-  margin: 0.5em;
+  margin: 0.5em 0;
   height: 48px;
 }
 
+.masonry {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  padding: 0.5em;
+  gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: next;
+  grid-template-rows: masonry;
+}
+
+/**
+* ANIMATIONS
+*/
 .hithere {
   animation: hithere 1s ease 1;
   animation-delay: 2s;
@@ -146,6 +188,9 @@ form input {
     transform: scale(1);
   }
 }
+/**
+* BODY
+*/
 body {
   height: 100vh;
   width: 100vw;
@@ -154,6 +199,9 @@ body {
 body header {
   width: 100%;
   height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   position: fixed;
   top: 0;
@@ -164,30 +212,43 @@ body header .navigation {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   height: 100vh;
   position: absolute;
   left: 0;
   top: 150px;
-  background-color: black;
+  background-color: green;
   color: white;
-  display: none;
 }
-body main,
-body #page {
+body header .navigation .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body header .navigation .menu li {
+  padding: 0.5em;
+}
+body header .hidden {
+  display: none !important;
+}
+body header .btn-group {
+  display: flex;
+  gap: 1em;
+  padding: 0.5em;
+}
+body main {
   margin-top: 150px;
   min-height: 100vh;
   scroll-snap-type: y mandatory;
 }
-body main .hero,
-body #page .hero {
+body main .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-body main .hero__content,
-body #page .hero__content {
+body main .hero__content {
   margin: 0 auto;
   padding: 3em 1em;
   background-color: antiquewhite;
@@ -195,16 +256,13 @@ body #page .hero__content {
   z-index: 10;
   position: relative;
 }
-body main .hero__content h1,
-body #page .hero__content h1 {
+body main .hero__content h1 {
   font-size: 2.5em;
 }
-body main .hero__content p,
-body #page .hero__content p {
+body main .hero__content p {
   font-size: 1.25em;
 }
-body main .hero::before,
-body #page .hero::before {
+body main .hero::before {
   content: "";
   background-image: url("../img/img2.jpg");
   background-position: center;
@@ -218,10 +276,7 @@ body #page .hero::before {
 }
 body main .teaser,
 body main .about,
-body main .company,
-body #page .teaser,
-body #page .about,
-body #page .company {
+body main .company {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -234,10 +289,7 @@ body #page .company {
 }
 body main .teaser h2,
 body main .about h2,
-body main .company h2,
-body #page .teaser h2,
-body #page .about h2,
-body #page .company h2 {
+body main .company h2 {
   order: 0;
   width: 100%;
   text-align: center;
@@ -247,27 +299,23 @@ body #page .company h2 {
 }
 body main .teaser p,
 body main .about p,
-body main .company p,
-body #page .teaser p,
-body #page .about p,
-body #page .company p {
+body main .company p {
   order: 1;
-  padding: 1em 2em;
+  padding: 1em;
   position: relative;
 }
 body main .teaser button,
 body main .about button,
-body main .company button,
-body #page .teaser button,
-body #page .about button,
-body #page .company button {
+body main .company button {
   position: relative;
   order: 3;
 }
+body main .company {
+  background-color: #fff !important;
+  padding: 1em;
+}
 body main .programs,
-body main .team,
-body #page .programs,
-body #page .team {
+body main .team {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -277,9 +325,7 @@ body #page .team {
   position: relative;
 }
 body main .programs::before,
-body main .team::before,
-body #page .programs::before,
-body #page .team::before {
+body main .team::before {
   content: "";
   background-image: url("../img/img1.jpg");
   background-position: center;
@@ -294,9 +340,7 @@ body #page .team::before {
   opacity: 0.4;
 }
 body main .programs h2,
-body main .team h2,
-body #page .programs h2,
-body #page .team h2 {
+body main .team h2 {
   order: 0;
   flex-basis: 100%;
   text-align: center;
@@ -305,22 +349,34 @@ body #page .team h2 {
   position: relative;
 }
 body main .programs p,
-body main .team p,
-body #page .programs p,
-body #page .team p {
+body main .team p {
   order: 1;
-  padding: 1em 2em;
+  padding: 1em;
   position: relative;
 }
 body main .programs button,
-body main .team button,
-body #page .programs button,
-body #page .team button {
+body main .team button {
   position: relative;
   order: 3;
 }
-body main .testimonials,
-body #page .testimonials {
+body main .programs__content,
+body main .team__content {
+  position: relative;
+}
+body main .programs__cards,
+body main .team__cards {
+  position: relative;
+}
+body main .programs__cards .card,
+body main .team__cards .card {
+  background-color: #fff;
+}
+body main .programs__cards .card img,
+body main .team__cards .card img {
+  width: 250px;
+  height: auto;
+}
+body main .testimonials {
   min-height: 100vh;
   padding-top: 2.5em;
   width: 100vw;
@@ -328,67 +384,59 @@ body #page .testimonials {
   flex-direction: column;
   justify-content: center;
 }
-body main .testimonials__slider,
-body #page .testimonials__slider {
+body main .testimonials__slider {
   width: 100%;
   display: flex;
   overflow-x: scroll;
   align-items: center;
   position: relative;
 }
-body main .testimonials__slider .card,
-body #page .testimonials__slider .card {
+body main .testimonials__slider .card {
   min-width: 80%;
 }
-body main .testimonials h2,
-body #page .testimonials h2 {
+body main .testimonials h2 {
   text-align: center;
   width: 100%;
   margin-bottom: 1em;
 }
-body main .contact,
-body #page .contact {
+body main .contact {
   min-height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
   padding: 2em;
   background-color: lightgray;
 }
-body main .contact .card,
-body #page .contact .card {
+body main .contact .card {
   background-color: #fff;
 }
-body main .contact h2,
-body #page .contact h2 {
+body main .contact h2 {
   order: 0;
   flex-basis: 100%;
   text-align: center;
   font-size: 2em;
 }
-body main .contact__info,
-body #page .contact__info {
+body main .contact__info {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
   width: 100%;
-  padding: 2em;
 }
-body main .contact__info p,
-body #page .contact__info p {
-  margin: 0.75em;
-}
-body main .contact__form,
-body #page .contact__form {
+body main .contact__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   width: 100%;
+}
+body main .main__title {
+  width: 100%;
+  text-align: center;
+  padding: 3em;
+  background-color: lightgray;
 }
 body .footer {
   display: flex;
@@ -417,40 +465,6 @@ body .footer__credits {
   padding: 1em;
   background-color: #000;
   color: #fff;
-}
-body .main__title {
-  width: 100%;
-  text-align: center;
-  padding: 3em;
-  background-color: lightgray;
-}
-body .company {
-  background-color: #fff !important;
-  padding: 5em 2em;
-}
-body .team__content {
-  position: relative;
-}
-body .team__cards {
-  position: relative;
-}
-body .team__cards .card {
-  background-color: #fff;
-}
-body .team__cards .card img {
-  width: 250px;
-  height: auto;
-}
-body .masonry {
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  padding: 0.5em;
-  gap: 0.5em;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-flow: dense;
-  grid-auto-rows: next;
-  grid-template-rows: masonry;
 }
 
 /*# sourceMappingURL=home.css.map */

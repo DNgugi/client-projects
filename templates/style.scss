@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+    header{
+        width: 100%;
+        height: 150px;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        .navigation{
+            width: 80%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 150px;
+            background-color: black;
+        }
+    }
+    main{
+        margin-top: 150px;
+        min-height: 100vh;
+        scroll-snap-type: y proximity;
+        .hero{
+            height: 100vh;
+            background-color: aqua;
+        }
+        .about{
+            height: 100vh;
+            background-color: yellow;
+        }
+        .programs{
+            height: 100vh;
+            background-color: aqua;
+        }
+        .testimonials{
+            height: 100vh;
+            background-color: yellowgreen;
+        }
+        .contacts{
+            height: 100vh;
+            background-color: aqua;
+        }
+    }
+    footer{
+        background-color: red;
+        height: 50px;
+    }
+}
